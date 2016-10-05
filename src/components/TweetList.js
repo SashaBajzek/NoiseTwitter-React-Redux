@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { TweetContainer } from '../containers/TweetContainer.js';
+import { toJS } from 'immutable';
 
 export class TweetList extends Component {
   render() {
     return (
 			<div>
 				<section className="tweets">
-					{this.props.tweetsList.toJS().reverse().map(tweet => <TweetContainer 
-								key={tweet.id}
-								avatar={tweet.avatar}
-								author={tweet.author}
-								time={tweet.time}
-								tweetText={tweet.tweetText}
-								retweeted={tweet.retweeted}
-								liked={tweet.liked}
-								id={tweet.id}/>)}
+					{this.props.result.toJS().reverse().map(tweet => 
+						<TweetContainer key={tweet} id={tweet}/>
+					)}
 				</section>
 			</div>
     );
   }
 }
 
+
+//NEXT ITERATION:  Need to figure out how to eliminate the .reverse() or move it elsewhere

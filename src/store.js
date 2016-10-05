@@ -1,8 +1,10 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, compose, createStore } from 'redux';
 import { reducerTweets } from './reducer';
 import { reducer as formReducer } from 'redux-form';
 
 export default function makeStore() {
+	//Using Redux dev tools instead of return createStore(reducer);
+	const createStoreDevTools = compose(window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore);
 
 	const reducers = {
 		tweets: reducerTweets,
@@ -11,5 +13,5 @@ export default function makeStore() {
 
 	const reducersCombined = combineReducers(reducers);
 
-	return createStore(reducersCombined);
+	return createStoreDevTools(reducersCombined);
 }
