@@ -19,7 +19,7 @@ export class Tweet extends Component {
 	
   render() {
     return (
-			<article className=	{`tweet${this.retweeted()+this.liked()}`}>
+			<article className={`tweet${this.retweeted()+this.liked()}`}>
 				<a href={`http://twitter.com/${this.props.author}`} className="tweet__avatar">
 					<img src={`./${this.props.avatar}`} alt={this.props.author}/>
 				</a>

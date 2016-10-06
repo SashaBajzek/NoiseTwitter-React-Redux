@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TweetContainer } from '../containers/TweetContainer.js';
-import { toJS } from 'immutable';
 
 export class TweetList extends Component {
   render() {

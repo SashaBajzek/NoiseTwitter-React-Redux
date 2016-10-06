@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { retweetTweet, likeTweet } from '../action_creators';
 import { Tweet } from '../components/Tweet';
-import { toJS } from 'immutable';
 
 const mapStateToProps = (state, ownProps) => ({
 	avatar: state.tweets.getIn(['tweetsList', 'entities', 'tweets', ownProps.id.toString(), 'avatar']),
