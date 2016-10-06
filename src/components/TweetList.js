@@ -6,7 +6,7 @@ export class TweetList extends Component {
     return (
 			<div>
 				<section className="tweets">
-					{this.props.result.toJS().reverse().map(tweet => 
+					{this.props.result.map(tweet => 
 						<TweetContainer key={tweet} id={tweet}/>
 					)}
 				</section>
@@ -14,6 +14,3 @@ export class TweetList extends Component {
     );
   }
 }
-
-
-//NEXT ITERATION:  Need to figure out how to eliminate the .reverse() or move it elsewhere
