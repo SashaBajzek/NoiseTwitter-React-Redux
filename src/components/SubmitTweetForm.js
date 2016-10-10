@@ -1,4 +1,38 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
+
+
+export class SubmitTweetForm extends Component {
+  render() {
+		const { handleSubmit } = this.props;
+		
+		//Disables the submit button until all fields are valid
+		
+		//CURRENTLY DOES NOT WORK (my guess is .error is not carried over in mapStateToProps)
+		const canSubmit = () => {
+			return (this.props.tweetTextValue.error) 
+		}
+		
+		
+		
+		return (
+			<form className="tweetbox" onSubmit={ handleSubmit }>
+				<Field name="tweetText" component="textArea" type="text" placeholder="Compose new Tweet..."/>
+				<div className="tweetbox__actions">
+					<div className="tweetbox__counter">{/*this.props.maxCharacters  -*/ this.props.tweetTextValue }</div>
+					<input className="tweetbox__button" /* disabled={canSubmit()} */ type="submit" value="Tweet"/>
+				</div>
+			</form>	
+		);
+  }
+}
+
+
+/*  
+BEFORE UPDATING REDUX-FORM
+
+import React, { Component } from 'react';
+
 
 export class SubmitTweetForm extends Component {
   render() {
@@ -20,3 +54,5 @@ export class SubmitTweetForm extends Component {
 		);
   }
 }
+
+*/
