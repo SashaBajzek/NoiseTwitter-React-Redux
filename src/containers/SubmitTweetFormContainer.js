@@ -1,30 +1,22 @@
-import { reduxForm, formValueSelector } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { SubmitTweetForm } from '../components/SubmitTweetForm';
 
 
 //Validation for the form fields
-const validate = values => {
+const validate = (values, props) => {
 	const errors = {};
 	if(!values.tweetText) {
 		errors.tweetText = 'Tweet required, no empty tweets allowed'
-	} else if (values.tweetText.length > 140) {
+	} else if (values.tweetText.length > props.maxCharacters) {
 		errors.tweetText = 'Must be 140 or less characters'
 	}
 	return errors;
 }
 
-const selector = formValueSelector('createTweetForm');
-
-const mapStateToProps = (state) => {
-	let tweetTextValue = selector(state, 'tweetText');
-	if (!tweetTextValue)
-		{tweetTextValue = ""}  //tweetTextValue is undefined until it has text, so pass empty string to be able to use .length to calculate remainingCharacters
-	
-	return {
-		remainingCharacters: state.tweets.getIn(['maxCharacters']) - tweetTextValue.length
-	}
-}
+const mapStateToProps = (state) => ({
+	maxCharacters: state.tweets.getIn(['maxCharacters'])
+})
 
 export const SubmitTweetFormContainer = connect(
 	mapStateToProps, 
