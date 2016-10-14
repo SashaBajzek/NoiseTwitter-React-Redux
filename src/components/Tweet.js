@@ -18,7 +18,7 @@ export class Tweet extends Component {
 		}
 	
   render() {
-		const { tweet } = this.props;
+		const { tweet, id, retweetTweet, likeTweet } = this.props;
     return (
 			<article className={`tweet${this.retweeted()+this.liked()}`}>
 				<a href={`http://twitter.com/${tweet.get('author')}`} className="tweet__avatar">
@@ -30,8 +30,8 @@ export class Tweet extends Component {
 						<small className="tweet__time">{tweet.get('time')}</small>
 					</div>
 					<p className="tweet__content">{tweet.get('tweetText')}</p>
-					<button className="retweet" onClick={() => this.props.retweetTweet(this.props.id, tweet.get('retweeted'))} >Retweet</button>
-					<button className="like" onClick={() => this.props.likeTweet(this.props.id, tweet.get('liked'))}>Like</button>
+					<button className="retweet" onClick={() => retweetTweet(id, tweet.get('retweeted'))} >Retweet</button>
+					<button className="like" onClick={() => likeTweet(id, tweet.get('liked'))}>Like</button>
 				</div>
 			</article>
     );

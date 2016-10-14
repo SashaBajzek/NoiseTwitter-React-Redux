@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { TweetList } from '../components/TweetList';
-import { toJS } from 'immutable';
 import { getReversedTweetIds } from '../selectors.js';
 
 const mapStateToProps = (state) => ({
