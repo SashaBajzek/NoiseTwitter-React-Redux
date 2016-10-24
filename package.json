@@ -12,7 +12,9 @@
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.3.2",
+    "react-flip-move": "^2.6.0",
     "react-redux": "^4.0.0",
+    "react-textarea-autosize": "^4.0.5",
     "redux": "^3.5.2",
     "redux-form": "^6.0.5",
     "reselect": "^2.5.4"

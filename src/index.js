@@ -10,9 +10,9 @@ import './style.css';
 export const store = makeStore();
 
 let seedTweets = [
-		{id: 0, avatar: "avatar.jpg", author: "JeffreyATW", time: "3h", tweetText: "I'm a little teapot, short and stout.", retweeted: false, liked: false},
-		{id: 1, avatar: "avatar.jpg", author: "JeffreyATW", time: "2h", tweetText: "Old McDonald had a farm.", retweeted: false, liked: false},
-		{id: 2, avatar: "avatar.jpg", author: "JeffreyATW", time: "1h", tweetText: "You give love a bad name.", retweeted: false, liked: false}
+		{id: 0, avatar: "avatar.jpg", author: "dabridginator", time: "3h", tweetText: "Going to the beach today?", retweeted: false, liked: false},
+		{id: 1, avatar: "avatar.jpg", author: "dabridginator", time: "2h", tweetText: "Seashell hunting.", retweeted: false, liked: false},
+		{id: 2, avatar: "avatar.jpg", author: "dabridginator", time: "1h", tweetText: "Stinson Beach is nice.", retweeted: false, liked: false}
 	];
 
 const tweet = new Schema('tweets');

@@ -13,7 +13,7 @@ export function addTweet(state, tweetText) {
 	const currentIds = state.getIn(['tweetsList', 'result']).toJS();
 	const tweetId = Math.max.apply(null, currentIds) + 1;
 
-	const newTweet = Map({id: tweetId,  avatar: "avatar.jpg", author: "JeffreyATW", time: "now", ...tweetText, retweeted: false, liked: false});	
+	const newTweet = Map({id: tweetId,  avatar: "avatar.jpg", author: "dabridginator", time: "now", ...tweetText, retweeted: false, liked: false});	
 	
 	return state.setIn(['tweetsList', 'entities', 'tweets', tweetId.toString()], newTweet).setIn(['tweetsList', 'result',  tweetId.toString()], tweetId);
 }

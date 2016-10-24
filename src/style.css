@@ -1,26 +1,63 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: lightblue;
+	background: url("../public/BeachBackground.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body, .tweetbox__field, input {
+	color: midnightblue;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
 body {
-  background: lightblue;
+	margin: 0 auto;
   width: 320px;
-  margin: 0 auto;
 }
 
 .tweetbox {
-  background: #f5f5f5;
-  border-radius: 6px;
-  padding: 10px;
-  margin: 10px 0;
+	background: #f5f5f5;
+	background-color: gold;
+	border-radius: 6px;
+	height: 89px;
+	margin: 10px 0;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	width: 320px;
 }
 
 .tweetbox__field {
-  width: 289px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid lightsteelblue;
+	color: navy;
+	margin: 0 auto;
   padding: 5px;
+	resize: vertical;
+	width: 300px;
+}
+
+::-webkit-input-placeholder {
+   color: steelblue;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: steelblue;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: steelblue;
+}
+
+:-ms-input-placeholder {  
+   color: steelblue;
 }
 
 .tweetbox__actions {
@@ -29,21 +66,69 @@ body {
 }
 
 .tweetbox__counter {
+	color: midnightblue;
   line-height: 22px;
   margin-right: 5px;
 }
 
+.tweetbox__button {
+	align-items: flex-start;
+	background-color: white;
+	border: 1px solid lightsteelblue;
+	border-radius: 4px;
+	color: midnightblue;
+	cursor: default;
+	height: 22px;
+	margin-right: 4px;
+	padding: 2px 6px;
+	text-align: center;
+	width: 60px;
+}
+
+.tweetbox__button:hover {
+	background: lightyellow;
+	border-width: 2px;
+}
+
+
+.tweetbox__button:disabled {
+	align-items: flex-start;
+	background-color: buttonface;
+	border: 1px solid lightsteelblue;
+	border-radius: 4px;
+	color: steelblue;
+	cursor: default;
+	height: 22px;
+	margin-right: 4px;
+	padding: 2px 6px;
+	text-align: center;
+	width: 60px;
+}
+
+.tweetbox__button:disabled:hover {
+	border-color: red;
+	cursor: not-allowed;
+}
+
 .tweets {
-  background: white;
-  border: 1px solid #ccc;
-  border-top: none;
+	background: white;
+	background-image: url("../public/sunburst.svg");
+	border: 1px solid lightsteelblue;
+	border-top: none;
+	overflow: auto;
+  position: absolute;
+	top: 109px;
+	width: 320px;
+    bottom: 0;
+
 }
 
 .tweet {
+	border-top: 1px solid lightsteelblue;
   clear: both;
   display: flex;
   padding: 10px;
-  border-top: 1px solid #ccc;
+	z-index: 1;
 }
 
 .tweet__avatar {
@@ -52,6 +137,7 @@ body {
 }
 
 .tweet__avatar img {
+	border: 1px solid steelblue;
   display: block;
 }
 
@@ -65,24 +151,104 @@ body {
 }
 
 .tweet__content {
+	line-height: 18px;
   margin: 5px 0 0;
-  line-height: 18px;
 }
 
 .tweet__time {
-  color: #999;
+  color: steelblue;
 }
 
 .tweet__author {
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: midnightblue;
+}
+
+.retweet, .like {
+	align-items: flex-start;
+	background-color: white;
+	border: 1px solid lightsteelblue;
+	border-radius: 4px;
+	color: midnightblue;
+	cursor: default;
+	height: 22px;
+	margin-right: 4px;
+	padding: 2px 6px;
+	text-align: center;
+	width: 60px;
+}
+
+.retweet:hover, .like:hover {
+	background: lightyellow;
+	border-width: 2px;
 }
 
 .retweeted .retweet {
-	background: green;
+	background: palegreen;
+	font-weight: bold;
 }
 
 .liked .like {
-	background: crimson;
+	background: coral;
+	font-weight: bold;
+}
+
+.castle {
+	bottom: 10px;
+	left: 5px;
+	position: fixed;
+}
+
+.flag {
+	animation: flagwave 5s infinite ease-in;
+	transition: transform 5s;
+	fill: pink;
+}
+
+.coconut {
+	bottom: 10px;
+	position: fixed;
+	right: 100px;
+}
+
+.crab {
+	animation: crabwalk 10s infinite ease-in;
+	bottom: 20px;
+	left: 50%;
+	position: fixed;
+	transition: transform 10s;
+	z-index: 2;
+}
+
+.drink {
+	bottom: 20px;
+	left: 250px;
+	position: fixed;
+}
+
+.palm {
+	bottom: 20px;
+	position: fixed;
+	right: 0px;
+}
+
+@keyframes crabwalk {
+	0% {transform: translateX(0px);}
+	10% {transform: translateX(50px);}
+	20% {transform: translateX(100px);}
+	30% {transform: translateX(150px);}
+	40% {transform: translateX(200px);}
+	50% {transform: translateX(250px);}
+	60% {transform: translateX(200px);}
+	70% {transform: translateX(150px);}
+	80% {transform: translateX(100px);}
+	90% {transform: translateX(50px);}
+	100% {transform: translateX(0px);}
+}
+
+@keyframes flagwave {
+	0% {fill:#14A4BC;}
+	50% {fill:aqua;}
+	100% {fill:#14A4BC;}
 }

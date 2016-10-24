@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { TweetContainer } from '../containers/TweetContainer.js';
+import FlipMove from 'react-flip-move';
 
 export class TweetList extends Component {
   render() {
     return (
-			<div>
 				<section className="tweets">
-					{this.props.result.map(tweet => 
+					<FlipMove staggerDelayBy={40} staggerDurationBy={40}>
+						{this.props.result.map(tweet => 
 						<TweetContainer key={tweet} id={tweet}/>
-					)}
+						)}
+					</FlipMove>
 				</section>
-			</div>
     );
   }
 }
