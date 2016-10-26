@@ -18,8 +18,10 @@ body, .tweetbox__field, input {
 }
 
 body {
+	height: 100vh;
 	margin: 0 auto;
-  width: 320px;
+  width: 80vw;
+	position: relative;
 }
 
 .tweetbox {
@@ -27,11 +29,11 @@ body {
 	background-color: gold;
 	border-radius: 6px;
 	height: 89px;
-	margin: 10px 0;
+	margin: 10px auto;
 	padding: 10px;
-	position: fixed;
+	position: relative;
 	top: 0;
-	width: 320px;
+	z-index: 3;
 }
 
 .tweetbox__field {
@@ -41,7 +43,7 @@ body {
 	margin: 0 auto;
   padding: 5px;
 	resize: vertical;
-	width: 300px;
+	width: 100%;
 }
 
 ::-webkit-input-placeholder {
@@ -116,11 +118,12 @@ body {
 	border: 1px solid lightsteelblue;
 	border-top: none;
 	overflow: auto;
-  position: absolute;
-	top: 109px;
-	width: 320px;
-    bottom: 0;
-
+	/*max-width: 320px;*/
+	max-height: calc(100vh - 119px);
+	position: relative;
+	top: 0px;
+	z-index: 3;
+	margin: 10px auto;
 }
 
 .tweet {
@@ -195,60 +198,111 @@ body {
 }
 
 .castle {
-	bottom: 10px;
-	left: 5px;
-	position: fixed;
+	visibility: hidden;
 }
 
 .flag {
-	animation: flagwave 5s infinite ease-in;
-	transition: transform 5s;
-	fill: pink;
+	visibility: hidden;
 }
 
 .coconut {
-	bottom: 10px;
-	position: fixed;
-	right: 100px;
+	visibility: hidden;
 }
 
 .crab {
-	animation: crabwalk 10s infinite ease-in;
-	bottom: 20px;
-	left: 50%;
-	position: fixed;
-	transition: transform 10s;
-	z-index: 2;
+	visibility: hidden;
 }
 
 .drink {
-	bottom: 20px;
-	left: 250px;
-	position: fixed;
+	visibility: hidden;
 }
 
 .palm {
-	bottom: 20px;
-	position: fixed;
-	right: 0px;
+	visibility: hidden;
 }
 
-@keyframes crabwalk {
-	0% {transform: translateX(0px);}
-	10% {transform: translateX(50px);}
-	20% {transform: translateX(100px);}
-	30% {transform: translateX(150px);}
-	40% {transform: translateX(200px);}
-	50% {transform: translateX(250px);}
-	60% {transform: translateX(200px);}
-	70% {transform: translateX(150px);}
-	80% {transform: translateX(100px);}
-	90% {transform: translateX(50px);}
-	100% {transform: translateX(0px);}
+
+@media only screen and (min-width: 340px) {
+	
+	body {
+		margin: 0 auto;
+		width: 320px;
+	}
+	
+	.tweetbox__field {
+		margin: 0 auto;
+		width: 300px;
+	}
+	
 }
 
-@keyframes flagwave {
-	0% {fill:#14A4BC;}
-	50% {fill:aqua;}
-	100% {fill:#14A4BC;}
+@media only screen and (min-width: 640px) {
+	
+	.castle {
+		bottom: 10px;
+		left: 5px;
+		position: fixed;
+		visibility: visible;
+	}
+
+	.flag {
+		animation: flagwave 5s infinite ease-in;
+		transition: transform 5s;
+		fill: pink;
+		visibility: visible;
+	}
+
+	.coconut {
+		bottom: 10px;
+		position: fixed;
+		right: 100px;
+		visibility: visible;
+	}
+
+	.crab {
+		animation: crabwalk 10s infinite ease-in;
+		bottom: 20px;
+		left: 50%;
+		position: fixed;
+		transition: transform 10s;
+		z-index: 2;
+		visibility: visible;
+	}
+
+	.drink {
+		bottom: 20px;
+		left: 250px;
+		position: fixed;
+		visibility: visible;
+	}
+
+	.palm {
+		bottom: 20px;
+		position: fixed;
+		right: 0px;
+		visibility: visible;
+	}
+
+	@keyframes crabwalk {
+		0% {transform: translateX(0px);}
+		10% {transform: translateX(50px);}
+		20% {transform: translateX(100px);}
+		30% {transform: translateX(150px);}
+		40% {transform: translateX(200px);}
+		50% {transform: translateX(250px);}
+		60% {transform: translateX(200px);}
+		70% {transform: translateX(150px);}
+		80% {transform: translateX(100px);}
+		90% {transform: translateX(50px);}
+		100% {transform: translateX(0px);}
+	}
+
+	@keyframes flagwave {
+		0% {fill:#14A4BC;}
+		50% {fill:aqua;}
+		100% {fill:#14A4BC;}
+	}
+
+	
 }
+
