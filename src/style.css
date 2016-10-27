@@ -20,6 +20,7 @@ body, .tweetbox__field, input {
 body {
 	height: 100vh;
 	margin: 0 auto;
+	overflow: hidden;
   width: 80vw;
 	position: relative;
 }
@@ -92,19 +93,9 @@ body {
 	border-width: 2px;
 }
 
-
 .tweetbox__button:disabled {
-	align-items: flex-start;
 	background-color: buttonface;
-	border: 1px solid lightsteelblue;
-	border-radius: 4px;
 	color: steelblue;
-	cursor: default;
-	height: 22px;
-	margin-right: 4px;
-	padding: 2px 6px;
-	text-align: center;
-	width: 60px;
 }
 
 .tweetbox__button:disabled:hover {
@@ -117,9 +108,8 @@ body {
 	background-image: url("../public/sunburst.svg");
 	border: 1px solid lightsteelblue;
 	border-top: none;
-	overflow: auto;
-	/*max-width: 320px;*/
 	max-height: calc(100vh - 119px);
+	overflow: auto;
 	position: relative;
 	top: 0px;
 	z-index: 3;
