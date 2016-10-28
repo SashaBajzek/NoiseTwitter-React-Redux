@@ -10,7 +10,7 @@ Redux-Forms instruction:  Notice the reused stateless function component used to
 const renderField = ({ input, type, meta: { touched, error } }) => (
 	<div>
 		<TextArea minRows={2} {...input} placeholder="Compose new beachy Tweet..." type={type} className="tweetbox__field"></TextArea>
-		{ touched && error && <span>{ error }</span> }
+		{/* touched && error && <span>{ error }</span> */}
 	</div>
 )
 

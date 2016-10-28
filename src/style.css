@@ -32,9 +32,8 @@ body {
 	height: 89px;
 	margin: 10px auto;
 	padding: 10px;
-	position: relative;
 	top: 0;
-	z-index: 3;
+	z-index: 2;
 }
 
 .tweetbox__field {
@@ -85,6 +84,7 @@ body {
 	margin-right: 4px;
 	padding: 2px 6px;
 	text-align: center;
+	-webkit-appearance: none;
 	width: 60px;
 }
 
@@ -112,7 +112,7 @@ body {
 	overflow: auto;
 	position: relative;
 	top: 0px;
-	z-index: 3;
+	z-index: 2;
 	margin: 10px auto;
 }
 
@@ -233,6 +233,7 @@ body {
 		left: 5px;
 		position: fixed;
 		visibility: visible;
+		z-index: -1;
 	}
 
 	.flag {
@@ -240,6 +241,7 @@ body {
 		transition: transform 5s;
 		fill: pink;
 		visibility: visible;
+		z-index: -1;
 	}
 
 	.coconut {
@@ -247,6 +249,7 @@ body {
 		position: fixed;
 		right: 100px;
 		visibility: visible;
+		z-index: -1;
 	}
 
 	.crab {
@@ -257,13 +260,7 @@ body {
 		transition: transform 10s;
 		z-index: 2;
 		visibility: visible;
-	}
-
-	.drink {
-		bottom: 20px;
-		left: 250px;
-		position: fixed;
-		visibility: visible;
+		z-index: -1;
 	}
 
 	.palm {
@@ -271,6 +268,7 @@ body {
 		position: fixed;
 		right: 0px;
 		visibility: visible;
+		z-index: -2;
 	}
 
 	@keyframes crabwalk {
